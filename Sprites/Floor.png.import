@@ -2,35 +2,32 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Floor.png-7a485cdf10c137805cd2d72580b71f1c.s3tc.stex"
-path.etc2="res://.import/Floor.png-7a485cdf10c137805cd2d72580b71f1c.etc2.stex"
+path="res://.import/Floor.png-7a485cdf10c137805cd2d72580b71f1c.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Floor.png"
-dest_files=[ "res://.import/Floor.png-7a485cdf10c137805cd2d72580b71f1c.s3tc.stex", "res://.import/Floor.png-7a485cdf10c137805cd2d72580b71f1c.etc2.stex" ]
+dest_files=[ "res://.import/Floor.png-7a485cdf10c137805cd2d72580b71f1c.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
