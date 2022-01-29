@@ -21,24 +21,20 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity.normalized() * move_speed, Vector3.UP)
 
 
-func _input(event):
-	var x_facing = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
-	var y_facing = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
-	
-	if x_facing != 0:
-		if flipped and x_facing > 0:
+func _process(delta):
+	if velocity.x != 0:
+		if flipped and velocity.x > 0:
 			flipped = false
 			$Animator.play("flip_right")
-			animated_sprite.play("walk_right")
-		elif not flipped and x_facing < 0:
+			animated_sprite.play("walk_sideways")
+		elif not flipped and velocity.x < 0:
 			flipped = true
 			$Animator.play("flip_left")
-			animated_sprite.play("walk_left")
-	elif y_facing != 0:
-		if y_facing < 0:
+			animated_sprite.play("walk_sideways")
+	elif velocity.z != 0:
+		if velocity.z < 0:
 			animated_sprite.play("walk_yonder")
 		else:
 			animated_sprite.play("walk_hither")
 	else:
 		animated_sprite.play("idle")
-		
