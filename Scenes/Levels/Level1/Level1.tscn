@@ -24,7 +24,7 @@ spot_attenuation = 2.0
 spot_angle_attenuation = 15.0
 
 [node name="Deathray" parent="Lights" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0.8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584698, 0.32, 0.8 )
 
 [node name="Pillars" type="Spatial" parent="."]
 
