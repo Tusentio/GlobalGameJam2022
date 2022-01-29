@@ -11,9 +11,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -31,9 +32,9 @@ __meta__ = {
 
 [node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 428.0
-margin_top = 215.0
+margin_top = 209.0
 margin_right = 595.0
-margin_bottom = 385.0
+margin_bottom = 391.0
 custom_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="CenterContainer/Buttons"]
