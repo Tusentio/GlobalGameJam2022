@@ -3,6 +3,7 @@ extends KinematicBody
 var velocity = Vector3.ZERO
 var move_speed = 2
 var flipped = false
+var isRunning = false
 
 func _physics_process(delta):
 	# Input
@@ -14,9 +15,21 @@ func _physics_process(delta):
 func _input(event):
 	var facing = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
 
-	if flipped and facing > 0:
-		flipped = false
-		$Animator.play("flip_right")
-	elif not flipped and facing < 0:
-		flipped = true
-		$Animator.play("flip_left")
+	if facing != 0:
+		if not isRunning:
+			isRunning = true
+			$Pivot/Sprite.visible = false
+			$Pivot/Running.visible = true
+			$Pivot/Running.frame = 0
+			$Pivot/Running.playing = true
+		
+		if flipped and facing > 0:
+			flipped = false
+			$Animator.play("flip_right")
+		elif not flipped and facing < 0:
+			flipped = true
+			$Animator.play("flip_left")
+	elif isRunning:
+		isRunning = false
+		$Pivot/Sprite.visible = true
+		$Pivot/Running.visible = false
