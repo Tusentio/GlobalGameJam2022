@@ -4,7 +4,9 @@
 
 [node name="LevelEntrance" type="Spatial"]
 
-[node name="Sprite" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0 )
+[node name="SpriteCenter" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.18, 0 )
+
+[node name="Sprite" type="Sprite3D" parent="SpriteCenter"]
 texture = ExtResource( 1 )
 hframes = 2

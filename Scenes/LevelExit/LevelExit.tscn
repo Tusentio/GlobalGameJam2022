@@ -4,15 +4,15 @@
 [ext_resource path="res://Scenes/LevelExit/LevelExit.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.16, 0.32, 0.001 )
+extents = Vector3( 0.14, 0.19, 0.001 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.32, 0.32, 0.32 )
+extents = Vector3( 0.2, 0.2, 0.2 )
 
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:translation")
+tracks/0/path = NodePath("SpriteCenter/Sprite:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,37 +28,28 @@ tracks/0/keys = {
 resource_name = "shake"
 length = 0.1
 step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0.32, 0 ), Vector3( 0.1, 0.42, 0 ), Vector3( -0.1, 0.32, 0.1 ), Vector3( 0, 0.32, 0 ), Vector3( 0, 0.32, -0.1 ), Vector3( -0.1, 0.32, -0.1 ), Vector3( 0.2, 0.32, 0.1 ), Vector3( 0.2, 0.32, 0 ), Vector3( 0.2, 0.32, -0.1 ), Vector3( -0.1, 0.32, 0.1 ), Vector3( 7.45058e-09, 0.32, 0 ) ]
-}
 
 [node name="LevelExit" type="Spatial"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite3D" parent="."]
+[node name="SpriteCenter" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, -0.14, 0 )
+
+[node name="Sprite" type="Sprite3D" parent="SpriteCenter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0 )
 texture = ExtResource( 1 )
 hframes = 2
 
 [node name="ExitArea" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0 )
 
 [node name="Collider" type="CollisionShape" parent="ExitArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19, 0 )
 shape = SubResource( 1 )
 
 [node name="OpenArea" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0 )
 
 [node name="Collider" type="CollisionShape" parent="OpenArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
 shape = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
