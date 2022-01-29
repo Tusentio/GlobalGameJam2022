@@ -11,15 +11,15 @@ params_alpha_scissor_threshold = 0.5
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="CapsuleShape" id=5]
-radius = 0.08
-height = 0.08
+radius = 0.0599857
+height = 0.121917
 
 [sub_resource type="Animation" id=2]
 resource_name = "flip_left"
 length = 0.15
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/path = NodePath("Pivot:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +36,7 @@ resource_name = "flip_right"
 length = 0.15
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/path = NodePath("Pivot:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -51,13 +51,15 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0 )
+[node name="Pivot" type="Spatial" parent="."]
+
+[node name="Sprite" type="Sprite3D" parent="Pivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0995709, 0.12, 1.74819e-08 )
 material_override = SubResource( 4 )
 texture = ExtResource( 1 )
 
 [node name="Collider" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.12, 0 )
 shape = SubResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
