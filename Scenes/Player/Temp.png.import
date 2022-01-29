@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UVTest.png-352735985e43bb7b8ad309319c3874f4.stex"
+path="res://.import/Temp.png-e28661394b2d12f77d262df6e9067aee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UVTest.png"
-dest_files=[ "res://.import/UVTest.png-352735985e43bb7b8ad309319c3874f4.stex" ]
+source_file="res://Scenes/Player/Temp.png"
+dest_files=[ "res://.import/Temp.png-e28661394b2d12f77d262df6e9067aee.stex" ]
 
 [params]
 
