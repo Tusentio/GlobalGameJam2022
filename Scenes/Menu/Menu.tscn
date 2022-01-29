@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Themes/Main.tres" type="Theme" id=2]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -29,31 +30,35 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 472.0
-margin_top = 266.0
-margin_right = 551.0
-margin_bottom = 334.0
+margin_left = 428.0
+margin_top = 215.0
+margin_right = 595.0
+margin_bottom = 385.0
+custom_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="CenterContainer/Buttons"]
-margin_right = 79.0
-margin_bottom = 20.0
+margin_right = 167.0
+margin_bottom = 54.0
 focus_neighbour_top = NodePath("../QuitButton")
+theme = ExtResource( 2 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RestartButton" type="Button" parent="CenterContainer/Buttons"]
-margin_top = 24.0
-margin_right = 79.0
-margin_bottom = 44.0
+margin_top = 64.0
+margin_right = 167.0
+margin_bottom = 118.0
+theme = ExtResource( 2 )
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/Buttons"]
-margin_top = 48.0
-margin_right = 79.0
-margin_bottom = 68.0
+margin_top = 128.0
+margin_right = 167.0
+margin_bottom = 182.0
 focus_neighbour_bottom = NodePath("../PlayButton")
+theme = ExtResource( 2 )
 text = "Quit game"
 
 [connection signal="ready" from="CenterContainer" to="." method="_on_CenterContainer_ready"]

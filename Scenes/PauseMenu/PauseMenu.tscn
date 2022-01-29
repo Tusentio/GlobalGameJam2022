@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/PauseMenu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Themes/Main.tres" type="Theme" id=2]
 
 [node name="PauseMenu" type="CanvasLayer"]
 
@@ -37,22 +38,25 @@ margin_right = 534.0
 margin_bottom = 302.0
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/Center"]
-margin_left = 492.0
-margin_top = 280.0
-margin_right = 576.0
-margin_bottom = 324.0
+margin_left = 446.0
+margin_top = 243.0
+margin_right = 622.0
+margin_bottom = 361.0
+custom_constants/separation = 10
 
 [node name="ContinueButton" type="Button" parent="Menu/Center/Buttons"]
-margin_right = 84.0
-margin_bottom = 20.0
+margin_right = 176.0
+margin_bottom = 54.0
 focus_neighbour_top = NodePath("../MainMenuButton")
+theme = ExtResource( 2 )
 text = "Continue"
 
 [node name="MainMenuButton" type="Button" parent="Menu/Center/Buttons"]
-margin_top = 24.0
-margin_right = 84.0
-margin_bottom = 44.0
+margin_top = 64.0
+margin_right = 176.0
+margin_bottom = 118.0
 focus_neighbour_bottom = NodePath("../ContinueButton")
+theme = ExtResource( 2 )
 text = "Main menu"
 
 [connection signal="pressed" from="Menu/Center/Buttons/ContinueButton" to="Menu" method="_on_ContinueButton_pressed"]
