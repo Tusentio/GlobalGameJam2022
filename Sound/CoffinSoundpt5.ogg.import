@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CoffinSoundpt5.ogg-08c5f071ff00d5328450e4ed732a23f0.oggstr"
+
+[deps]
+
+source_file="res://Sound/CoffinSoundpt5.ogg"
+dest_files=[ "res://.import/CoffinSoundpt5.ogg-08c5f071ff00d5328450e4ed732a23f0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
