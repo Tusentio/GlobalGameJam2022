@@ -14,6 +14,10 @@ config/name="LightsOuch"
 run/main_scene="res://Scenes/Menu/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SceneChanger="*res://Autoload/SceneChanger.tscn"
+
 [global]
 
 scene=false
