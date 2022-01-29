@@ -16,7 +16,7 @@ func _input(event):
 
 	if flipped and facing > 0:
 		flipped = false;
-		$Animator.play("flip_left");
+		$Animator.play("flip_right");
 	elif not flipped and facing < 0:
 		flipped = true;
-		$Animator.play("flip_right");
+		$Animator.play("flip_left");

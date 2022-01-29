@@ -37,7 +37,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15 ),
 "transitions": PoolRealArray( -2, -2 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -180, 0 ) ]
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
 [node name="Player" type="KinematicBody"]
