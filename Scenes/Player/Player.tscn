@@ -53,6 +53,7 @@ shape = SubResource( 1 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.75, 1.5 )
 current = true
+fov = 45.0
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 anims/flip_left = SubResource( 2 )
