@@ -23,14 +23,14 @@ func _physics_process(delta):
 
 func _process(delta):
 	if velocity.x != 0:
+		animated_sprite.play("walk_sideways")
+		
 		if flipped and velocity.x > 0:
 			flipped = false
 			$Animator.play("flip_right")
-			animated_sprite.play("walk_sideways")
 		elif not flipped and velocity.x < 0:
 			flipped = true
 			$Animator.play("flip_left")
-			animated_sprite.play("walk_sideways")
 	elif velocity.z != 0:
 		if velocity.z < 0:
 			animated_sprite.play("walk_yonder")
