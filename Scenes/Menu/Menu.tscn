@@ -20,34 +20,43 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.594604
+margin_top = 1.18921
+margin_right = 0.594604
+margin_bottom = 1.18921
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 472.0
 margin_top = 266.0
 margin_right = 551.0
 margin_bottom = 334.0
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CenterContainer/Buttons"]
 margin_right = 79.0
 margin_bottom = 20.0
+focus_neighbour_top = NodePath("../QuitButton")
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="CenterContainer/Buttons"]
 margin_top = 24.0
 margin_right = 79.0
 margin_bottom = 44.0
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CenterContainer/Buttons"]
 margin_top = 48.0
 margin_right = 79.0
 margin_bottom = 68.0
+focus_neighbour_bottom = NodePath("../PlayButton")
 text = "Quit game"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_PlayButton_pressed"]
+[connection signal="ready" from="CenterContainer" to="." method="_on_CenterContainer_ready"]
+[connection signal="pressed" from="CenterContainer/Buttons/PlayButton" to="." method="_PlayButton_pressed"]
+[connection signal="ready" from="CenterContainer/Buttons/PlayButton" to="." method="_on_PlayButton_ready"]
+[connection signal="pressed" from="CenterContainer/Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
