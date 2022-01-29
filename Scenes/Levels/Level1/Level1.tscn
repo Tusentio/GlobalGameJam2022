@@ -17,6 +17,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0, 0.32 )
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0, 0.32 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LevelExit"]
+stream = ExtResource( 5 )
+volume_db = 2.22
+
 [node name="Floors" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 0.16, 0.16, 0.16 )
