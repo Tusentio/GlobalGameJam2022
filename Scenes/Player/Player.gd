@@ -10,6 +10,7 @@ var velocity = Vector3.ZERO
 var move_speed = 2
 var flipped = false
 var dead = false
+var disabled = false
 
 
 onready var animated_sprite: AnimatedSprite3D = $Pivot/Sprite
@@ -20,7 +21,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if dead: return
+	if dead or disabled: return
 	
 	# Input
 	velocity.x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
@@ -30,7 +31,7 @@ func _physics_process(delta):
 
 
 func _input(event):
-	if dead: return
+	if dead or disabled: return
 	
 	var x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
 	var z = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
@@ -54,18 +55,30 @@ func _input(event):
 
 
 func kill(killer: Node = null):
-	if not dead:
+	if not dead and not disabled:
 		dead = true
 		animated_sprite.play("ded")
 		emit_signal("dying", self, killer)
 
 
 func revive():
-	if dead:
+	if dead and not disabled:
 		dead = false
 		visible = true
 		animated_sprite.play("idle")
 		emit_signal("revived", self)
+
+
+func disable():
+	if not disabled:
+		disabled = true
+		visible = false
+
+
+func enable():
+	if disabled:
+		disabled = false
+		visible = true
 
 
 func _on_Sprite_animation_finished():
@@ -75,4 +88,5 @@ func _on_Sprite_animation_finished():
 
 
 func _on_DeathrayListener_deathray_entered(deathray):
-	kill(deathray)
+	if not disabled:
+		kill(deathray)
