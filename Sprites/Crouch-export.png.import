@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wall.png-c1e6c8a44733b40234aae37bb1bf51ff.stex"
+path="res://.import/Crouch-export.png-46fc6fb7873bb8f0a069b5f4d540e3d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Wall.png"
-dest_files=[ "res://.import/Wall.png-c1e6c8a44733b40234aae37bb1bf51ff.stex" ]
+source_file="res://Sprites/Crouch-export.png"
+dest_files=[ "res://.import/Crouch-export.png-46fc6fb7873bb8f0a069b5f4d540e3d6.stex" ]
 
 [params]
 
