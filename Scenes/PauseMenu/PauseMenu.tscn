@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+
+[node name="Node2D" type="CanvasLayer"]
+
+[node name="Control" type="CenterContainer" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = 470.0
+margin_top = 278.0
+margin_right = 554.0
+margin_bottom = 322.0
+
+[node name="ContinueButton" type="Button" parent="Control/VBoxContainer"]
+margin_right = 84.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../MainMenuButton")
+text = "Continue"
+
+[node name="MainMenuButton" type="Button" parent="Control/VBoxContainer"]
+margin_top = 24.0
+margin_right = 84.0
+margin_bottom = 44.0
+focus_neighbour_bottom = NodePath("../ContinueButton")
+text = "Main menu"
+
+[connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="Control" method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MainMenuButton" to="Control" method="_on_MainMenuButton_pressed"]
