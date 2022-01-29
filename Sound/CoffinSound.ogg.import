@@ -11,5 +11,5 @@ dest_files=[ "res://.import/CoffinSound.ogg-e84dc1fd5c5fc4aaa014b3f0336df06c.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
