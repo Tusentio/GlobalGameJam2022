@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area",
+"class": "DeathrayListener",
+"language": "GDScript",
+"path": "res://Scenes/Deathray/DeathrayListener.gd"
+} ]
+_global_script_class_icons={
+"DeathrayListener": ""
+}
+
 [application]
 
 config/name="LightsOuch"

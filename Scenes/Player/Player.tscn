@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/MainSprite.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Running.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Deathray/DeathrayListener.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpatialMaterial" id=6]
 flags_unshaded = true
@@ -21,22 +22,18 @@ params_alpha_scissor_threshold = 0.5
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 34, 25 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 34, 0, 34, 25 )
 
 [sub_resource type="AtlasTexture" id=10]
-flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 68, 0, 34, 25 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 102, 0, 34, 25 )
 
@@ -113,3 +110,6 @@ fov = 45.0
 [node name="Animator" type="AnimationPlayer" parent="."]
 anims/flip_left = SubResource( 2 )
 anims/flip_right = SubResource( 3 )
+
+[node name="DeathrayListener" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0 )
