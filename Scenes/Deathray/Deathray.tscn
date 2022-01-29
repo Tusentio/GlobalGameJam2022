@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Deathray" type="SpotLight"]
+shadow_enabled = true
+shadow_bias = 0.002
+shadow_reverse_cull_face = true
+spot_attenuation = 2.0
+spot_angle_attenuation = 15.0

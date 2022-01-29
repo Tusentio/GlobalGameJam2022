@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/PauseMenu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Themes/Main.tres" type="Theme" id=2]
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer"]
 
-[node name="Control" type="CenterContainer" parent="."]
+[node name="Menu" type="Control" parent="."]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -14,30 +14,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+[node name="Background" type="ColorRect" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.54902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = 470.0
-margin_top = 278.0
-margin_right = 554.0
-margin_bottom = 322.0
+[node name="Center" type="CenterContainer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 44.0
+margin_bottom = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ContinueButton" type="Button" parent="Control/VBoxContainer"]
-margin_right = 84.0
-margin_bottom = 20.0
+[node name="TextureRect" type="TextureRect" parent="Menu/Center"]
+margin_left = 534.0
+margin_top = 302.0
+margin_right = 534.0
+margin_bottom = 302.0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/Center"]
+margin_left = 446.0
+margin_top = 243.0
+margin_right = 622.0
+margin_bottom = 361.0
+custom_constants/separation = 10
+
+[node name="ContinueButton" type="Button" parent="Menu/Center/Buttons"]
+margin_right = 176.0
+margin_bottom = 54.0
 focus_neighbour_top = NodePath("../MainMenuButton")
+theme = ExtResource( 2 )
 text = "Continue"
 
-[node name="MainMenuButton" type="Button" parent="Control/VBoxContainer"]
-margin_top = 24.0
-margin_right = 84.0
-margin_bottom = 44.0
+[node name="MainMenuButton" type="Button" parent="Menu/Center/Buttons"]
+margin_top = 64.0
+margin_right = 176.0
+margin_bottom = 118.0
 focus_neighbour_bottom = NodePath("../ContinueButton")
+theme = ExtResource( 2 )
 text = "Main menu"
 
-[connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="Control" method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/MainMenuButton" to="Control" method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="Menu/Center/Buttons/ContinueButton" to="Menu" method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Menu/Center/Buttons/MainMenuButton" to="Menu" method="_on_MainMenuButton_pressed"]
