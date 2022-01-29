@@ -2,11 +2,9 @@
 
 [ext_resource path="res://Scenes/PauseMenu/PauseMenu.gd" type="Script" id=1]
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer"]
 
-[node name="Control" type="CenterContainer" parent="."]
-pause_mode = 2
-visible = false
+[node name="Menu" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -14,30 +12,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+[node name="Background" type="ColorRect" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.54902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = 470.0
-margin_top = 278.0
-margin_right = 554.0
-margin_bottom = 322.0
+[node name="Center" type="CenterContainer" parent="Menu"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 44.0
+margin_bottom = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ContinueButton" type="Button" parent="Control/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Menu/Center"]
+margin_left = 534.0
+margin_top = 302.0
+margin_right = 534.0
+margin_bottom = 302.0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/Center"]
+margin_left = 492.0
+margin_top = 280.0
+margin_right = 576.0
+margin_bottom = 324.0
+
+[node name="ContinueButton" type="Button" parent="Menu/Center/Buttons"]
 margin_right = 84.0
 margin_bottom = 20.0
 focus_neighbour_top = NodePath("../MainMenuButton")
 text = "Continue"
 
-[node name="MainMenuButton" type="Button" parent="Control/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="Menu/Center/Buttons"]
 margin_top = 24.0
 margin_right = 84.0
 margin_bottom = 44.0
 focus_neighbour_bottom = NodePath("../ContinueButton")
 text = "Main menu"
 
-[connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="Control" method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/MainMenuButton" to="Control" method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="Menu/Center/Buttons/ContinueButton" to="Menu" method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Menu/Center/Buttons/MainMenuButton" to="Menu" method="_on_MainMenuButton_pressed"]
