@@ -21,18 +21,22 @@ params_alpha_scissor_threshold = 0.5
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 34, 25 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 34, 0, 34, 25 )
 
 [sub_resource type="AtlasTexture" id=10]
+flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 68, 0, 34, 25 )
 
 [sub_resource type="AtlasTexture" id=11]
+flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 102, 0, 34, 25 )
 

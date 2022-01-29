@@ -13,7 +13,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity.normalized() * move_speed, Vector3.UP)
 
 func _input(event):
-	var facing = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
+	var xfacing = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
+	var zfacing = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
+	var facing = xfacing - zfacing / 2
 
 	if facing != 0:
 		if not isRunning:
