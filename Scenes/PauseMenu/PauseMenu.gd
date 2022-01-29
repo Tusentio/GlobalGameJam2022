@@ -1,6 +1,7 @@
-extends CenterContainer
+extends Control
 
-
+func _ready():
+	visible = false;
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -9,9 +10,7 @@ func _input(event):
 			get_tree().paused = !get_tree().paused
 			visible = !visible;
 
-			$VBoxContainer/ContinueButton.grab_focus();
-
-
+			$Center/Buttons/ContinueButton.grab_focus();
 
 func _on_ContinueButton_pressed():
 	get_tree().paused = false;
