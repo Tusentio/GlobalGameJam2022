@@ -3,6 +3,7 @@ extends KinematicBody
 
 signal dying
 signal dead
+signal revived
 
 
 var velocity = Vector3.ZERO
@@ -57,6 +58,14 @@ func kill(killer: Node = null):
 		dead = true
 		animated_sprite.play("ded")
 		emit_signal("dying", self, killer)
+
+
+func revive():
+	if dead:
+		dead = false
+		visible = true
+		animated_sprite.play("idle")
+		emit_signal("revived", self)
 
 
 func _on_Sprite_animation_finished():
