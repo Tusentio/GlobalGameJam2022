@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AlphaTest.png-9431eabfe39c799d6d4ee8ded9b32154.stex"
+path="res://.import/AlphaTest.png-bfb1dbcab9e29843f618080d84b3f113.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/AlphaTest.png"
-dest_files=[ "res://.import/AlphaTest.png-9431eabfe39c799d6d4ee8ded9b32154.stex" ]
+source_file="res://Sprites/Testing/AlphaTest.png"
+dest_files=[ "res://.import/AlphaTest.png-bfb1dbcab9e29843f618080d84b3f113.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
