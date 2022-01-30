@@ -44,10 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9626, -2.98023e-07, 1.80938
 
 [node name="Deathray" parent="Lights" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.403617, 0.722091, 1.34962 )
-
-[node name="Deathray2" parent="Lights" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 0.647149, 0.762363, 0, -0.762363, 0.647149, 12.6704, 0.722091, 2.82922 )
-switch = NodePath("../../Lever")
+switch = NodePath("../../Lever2")
 
 [node name="Deathray3" parent="Lights" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 0.76095, 0.648811, 0, -0.648811, 0.76095, 14.3576, 1.75129, 4.50741 )
@@ -171,6 +168,7 @@ __meta__ = {
 }
 
 [node name="Lever" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4981, 0.332138, 1.45956 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394239, 0.326833, 0.0311232 )
 
-[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
+[node name="Lever2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8245, 0.334635, 1.45035 )
