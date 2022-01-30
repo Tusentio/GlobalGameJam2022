@@ -15,7 +15,7 @@ func _ready():
 			switch_node.connect("switched", self, "_on_Switch_switched")
 
 
-func _process(delta):
+func _process(delta):	
 	if not visible: return
 	
 	var space_state = get_world().direct_space_state
@@ -51,4 +51,5 @@ func _on_DeathArea_area_exited(area):
 
 
 func _on_Switch_switched(state):
+	$On.play() if state else $Off.play()
 	visible = state
