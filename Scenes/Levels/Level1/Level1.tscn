@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Tiles/Walls.tres" type="MeshLibrary" id=5]
 [ext_resource path="res://Scenes/Pillar/Pillar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Deathray/Deathray.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerCamera/PlayerCamera.tscn" type="PackedScene" id=8]
 
 [node name="Level1" type="Spatial"]
 
@@ -36,6 +37,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.672, 2.544 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000439592, 0.32 )
+
+[node name="PlayerCamera" parent="Player" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0.96 )
 
 [node name="LevelEntrance" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0, 0.32 )
