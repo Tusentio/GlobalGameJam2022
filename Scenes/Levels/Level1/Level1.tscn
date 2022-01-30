@@ -80,8 +80,8 @@ spot_angle = 41.7194
 [node name="Painting1" parent="Lights" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9091, 0.326469, 1.44086 )
 
-[node name="Painting2" parent="Lights/Painting1" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52478, 0.63245, -1.92879 )
+[node name="Painting2" parent="Lights" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47768, 0.584511, 0.0059488 )
 
 [node name="Pillars" type="Spatial" parent="."]
 
@@ -138,9 +138,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.672, 3.544 )
 
 [node name="Pillar17" parent="Pillars" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.672, 3.544 )
-
-[node name="Banner2" parent="Pillars" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53187, -23.7592, -35.9648 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.673923, 0.000439592, 0.537885 )
@@ -263,5 +260,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39936, 0.646, 0.014747 )
 
 [node name="Banner7" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48678, 0.646, 0.013815 )
-
-[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
