@@ -40,14 +40,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46077, -2.98023e-07, 0.11618
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42536, -2.98023e-07, 3.6344 )
 
 [node name="Lantern8" parent="Lights" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9626, -2.98023e-07, 1.80938 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.779, -2.98023e-07, 1.80938 )
+
+[node name="Lantern9" parent="Lights" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.266, -2.98023e-07, 2.00882 )
 
 [node name="Deathray" parent="Lights" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.403617, 0.722091, 1.34962 )
+transform = Transform( 1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 0.383534, 1.03837, 0.0702271 )
+spot_angle = 30.0
 switch = NodePath("../../Lever2")
 
 [node name="Deathray3" parent="Lights" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 0.76095, 0.648811, 0, -0.648811, 0.76095, 14.3576, 1.75129, 4.50741 )
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 13.0578, 0.549405, 3.64623 )
+spot_angle = 20.0
 switch = NodePath("../../Lever")
 
 [node name="Pillars" type="Spatial" parent="."]
@@ -121,7 +126,7 @@ smooth_factor = 0.001
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0, 0.32 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2671, 0, 1.9415 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0585, 0, 1.9415 )
 
 [node name="Floors" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
@@ -169,6 +174,10 @@ __meta__ = {
 
 [node name="Lever" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394239, 0.326833, 0.0311232 )
+on = true
 
 [node name="Lever2" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8245, 0.334635, 1.45035 )
+on = true
+
+[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]

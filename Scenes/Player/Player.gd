@@ -8,7 +8,7 @@ signal revived
 
 var velocity = Vector3.ZERO
 var move_speed = 1.25
-var death_drama = 0.0005
+var death_drama = 0.001
 
 var flipped = false
 var dead = false
@@ -24,7 +24,7 @@ func _ready():
 
 
 func _process(delta):
-	if velocity.length_squared() < 0.01:
+	if disabled or dead or velocity.length_squared() < 0.01:
 		stop_walking()
 
 

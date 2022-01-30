@@ -29,14 +29,14 @@ flags = 18
 atlas = ExtResource( 8 )
 region = Rect2( 34, 0, 34, 24 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=21]
 flags = 18
-atlas = ExtResource( 6 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 34, 24 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=22]
 flags = 18
-atlas = ExtResource( 6 )
+atlas = ExtResource( 5 )
 region = Rect2( 34, 0, 34, 24 )
 
 [sub_resource type="AtlasTexture" id=8]
@@ -59,14 +59,14 @@ flags = 18
 atlas = ExtResource( 3 )
 region = Rect2( 102, 0, 34, 25 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=19]
 flags = 18
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 34, 24 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=20]
 flags = 18
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
 region = Rect2( 34, 0, 34, 24 )
 
 [sub_resource type="AtlasTexture" id=32]
@@ -106,9 +106,9 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
-"name": "walk_yonder",
+"name": "walk_hither",
 "speed": 6.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
@@ -116,9 +116,9 @@ animations = [ {
 "name": "walk_sideways",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
-"name": "walk_hither",
+"name": "walk_yonder",
 "speed": 6.0
 }, {
 "frames": [ SubResource( 32 ), SubResource( 23 ), SubResource( 23 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ) ],
@@ -222,7 +222,7 @@ anims/flip_left = SubResource( 2 )
 anims/flip_right = SubResource( 3 )
 
 [node name="DeathrayListener" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0 )
 
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 10 )
