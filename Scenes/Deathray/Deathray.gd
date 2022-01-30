@@ -1,10 +1,23 @@
 extends SpotLight
 
 
+export (NodePath) var switch: NodePath = ""
+
+
 var listeners = []
 
 
+func _ready():
+	if switch:
+		var switch_node = get_node(switch)
+		
+		if switch_node and switch_node.has_signal("switched"):
+			switch_node.connect("switched", self, "_on_Switch_switched")
+
+
 func _process(delta):
+	if not visible: return
+	
 	var space_state = get_world().direct_space_state
 	
 	for listener in listeners:
@@ -35,3 +48,7 @@ func _on_DeathArea_area_exited(area):
 		var listener = area as DeathrayListener
 		listener.outside(self)
 		listeners.erase(area)
+
+
+func _on_Switch_switched(state):
+	visible = state
