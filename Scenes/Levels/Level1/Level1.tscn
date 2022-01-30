@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -10,22 +10,15 @@
 [ext_resource path="res://Scenes/PlayerCamera/PlayerCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/CameraPivot.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Lantern/Lantern.tscn" type="PackedScene" id=11]
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 9 )
 
 [node name="Lights" type="Spatial" parent="."]
 
-[node name="SpotLight" type="SpotLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.335758, 1.08636 )
-visible = false
-light_color = Color( 0.992157, 0.956863, 0.886275, 1 )
-light_energy = 3.596
-shadow_enabled = true
-shadow_bias = 0.001
-shadow_reverse_cull_face = true
-spot_attenuation = 2.0
-spot_angle_attenuation = 15.0
+[node name="Lantern" parent="Lights" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84, 0, 0.77 )
 
 [node name="Deathray" parent="Lights" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.403617, 0.722091, 1.34962 )
