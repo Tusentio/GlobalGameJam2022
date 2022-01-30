@@ -41,7 +41,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.672, 2.544 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000439592, 0.32 )
 
 [node name="PlayerCamera" parent="Player" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0.96 )
+transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.364993, 0.96 )
+smooth_factor = 0.001
 
 [node name="LevelEntrance" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0, 0.32 )
