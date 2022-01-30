@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,18 @@
 [ext_resource path="res://Scripts/CameraPivot.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Lantern/Lantern.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Lever/Lever.tscn" type="PackedScene" id=12]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.4, 0.56, 0 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.96, 0.56, 0 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 4.56, 0.56, 0 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1.68, 0.56, 0 )
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 9 )
@@ -59,7 +71,6 @@ switch = NodePath("../../Lever")
 transform = Transform( 0.999864, -0.0059975, -0.0153898, 0.0153527, -0.00618323, 0.999863, 0.00609184, 0.999963, 0.00609031, 4.63948, 1.81024, 1.98164 )
 spot_range = 12.4015
 spot_angle = 41.7194
-switch = NodePath("../../Lever")
 
 [node name="Pillars" type="Spatial" parent="."]
 
@@ -185,3 +196,32 @@ on = true
 [node name="Lever2" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8245, 0.334635, 1.45035 )
 on = true
+
+[node name="InvisibleWalls" type="Spatial" parent="."]
+
+[node name="Wall" type="StaticBody" parent="InvisibleWalls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36, 0.56, 1.92 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWalls/Wall"]
+shape = SubResource( 1 )
+
+[node name="Wall2" type="StaticBody" parent="InvisibleWalls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800001, 0.56, 2.56 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWalls/Wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Wall3" type="StaticBody" parent="InvisibleWalls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16, 0.56, 3.84 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWalls/Wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="Wall4" type="StaticBody" parent="InvisibleWalls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.56, 0.56, 3.04 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWalls/Wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799999, 0, -0.48 )
+shape = SubResource( 4 )
