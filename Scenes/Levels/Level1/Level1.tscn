@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/CameraPivot.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Lantern/Lantern.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Lever/Lever.tscn" type="PackedScene" id=12]
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 9 )
@@ -166,5 +167,8 @@ __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, -63, 0 )
 }
+
+[node name="Lever" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4981, 0.332138, 1.45956 )
 
 [connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
