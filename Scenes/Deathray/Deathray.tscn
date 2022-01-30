@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Deathray/Deathray.gd" type="Script" id=1]
+[ext_resource path="res://Sound/DeathrayOn.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Sound/DeathrayOff.ogg" type="AudioStream" id=3]
 
 [sub_resource type="SphereShape" id=1]
 radius = 20.0
@@ -22,6 +24,20 @@ collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="DeathArea"]
 shape = SubResource( 1 )
+
+[node name="On" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 2 )
+unit_db = 6.0
+max_distance = 4096.0
+emission_angle_degrees = 90.0
+attenuation_filter_db = 0.0
+
+[node name="Off" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_db = 6.0
+max_distance = 4096.0
+emission_angle_degrees = 90.0
+attenuation_filter_db = 0.0
 
 [connection signal="area_entered" from="DeathArea" to="." method="_on_DeathArea_area_entered"]
 [connection signal="area_exited" from="DeathArea" to="." method="_on_DeathArea_area_exited"]
