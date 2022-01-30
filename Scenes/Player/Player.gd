@@ -64,7 +64,7 @@ func kill(killer: Node = null):
 	if not dead and not disabled:
 		dead = true
 		DeathScream.play()
-		$BurnParticles.emitting = true
+		$Pivot/BurnParticles.emitting = true
 		animated_sprite.play("ded")
 		emit_signal("dying", self, killer)
 
@@ -72,7 +72,7 @@ func kill(killer: Node = null):
 func revive():
 	if dead and not disabled:
 		dead = false
-		$BurnParticles.emitting = false
+		$Pivot/BurnParticles.emitting = false
 		animated_sprite.play("idle")
 		emit_signal("revived", self)
 
@@ -91,7 +91,7 @@ func enable():
 
 func _on_Sprite_animation_finished():
 	if dead:
-		$BurnParticles.emitting = false
+		$Pivot/BurnParticles.emitting = false
 		emit_signal("dead", self)
 
 
