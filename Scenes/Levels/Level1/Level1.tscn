@@ -260,3 +260,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39936, 0.646, 0.014747 )
 
 [node name="Banner7" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48678, 0.646, 0.013815 )
+
+[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
