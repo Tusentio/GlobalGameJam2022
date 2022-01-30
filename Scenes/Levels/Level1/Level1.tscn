@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Scripts/CameraPivot.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Lantern/Lantern.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Lever/Lever.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Paintings/Painting1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Paintings/Painting2.tscn" type="PackedScene" id=14]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.4, 0.56, 0 )
@@ -68,9 +70,15 @@ spot_angle = 20.0
 switch = NodePath("../../Lever")
 
 [node name="Deathray4" parent="Lights" instance=ExtResource( 7 )]
-transform = Transform( 0.999864, -0.0059975, -0.0153898, 0.0153527, -0.00618323, 0.999863, 0.00609184, 0.999963, 0.00609031, 4.63948, 1.81024, 1.98164 )
+transform = Transform( 0.999864, -0.0059975, -0.0153898, 0.0153527, -0.00618323, 0.999863, 0.00609184, 0.999963, 0.00609031, 4.51071, 1.81024, 1.89418 )
 spot_range = 12.4015
 spot_angle = 41.7194
+
+[node name="Painting1" parent="Lights" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0276, 0.0628681, 1.93698 )
+
+[node name="Painting2" parent="Lights/Painting1" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52478, 0.63245, -1.92879 )
 
 [node name="Pillars" type="Spatial" parent="."]
 
