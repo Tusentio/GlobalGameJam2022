@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://Autoload/SceneChanger.tscn"
 PauseMenu="*res://Scenes/PauseMenu/PauseMenu.tscn"
+DeathScream="*res://Autoload/DeathScream.tscn"
 
 [global]
 
@@ -55,6 +56,10 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
 }
 
 [input]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Temp.png-e28661394b2d12f77d262df6e9067aee.stex"
+path="res://.import/Smoke.png-5692449a3d406e5c061bff54037cb28a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/Temp.png"
-dest_files=[ "res://.import/Temp.png-e28661394b2d12f77d262df6e9067aee.stex" ]
+source_file="res://Sprites/Smoke.png"
+dest_files=[ "res://.import/Smoke.png-5692449a3d406e5c061bff54037cb28a.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
