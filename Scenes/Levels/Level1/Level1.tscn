@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://Scenes/Pillar/Pillar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Deathray/Deathray.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/PlayerCamera/PlayerCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=9]
 
 [node name="Level1" type="Spatial"]
+script = ExtResource( 9 )
 
 [node name="Lights" type="Spatial" parent="."]
 
