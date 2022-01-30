@@ -2,11 +2,9 @@ extends SpotLight
 
 
 export (NodePath) var switch: NodePath = ""
-export (bool) var on = true
 
 
 var listeners = []
-onready var _on = on
 
 
 func _ready():
@@ -18,9 +16,7 @@ func _ready():
 
 
 func _process(delta):
-	if on != _on:
-		turn_off() if on else turn_on()
-		_on = on
+	if not visible: return
 	
 	var space_state = get_world().direct_space_state
 	
@@ -42,18 +38,6 @@ func _process(delta):
 			listener.inside(self)
 
 
-func turn_off():
-	if on:
-		on = false
-		_on = false
-
-
-func turn_on():
-	if not on:
-		on = true
-		_on = true
-
-
 func _on_DeathArea_area_entered(area):
 	if area is DeathrayListener and not listeners.has(area):
 		listeners.append(area)
@@ -67,4 +51,4 @@ func _on_DeathArea_area_exited(area):
 
 
 func _on_Switch_switched(state):
-	turn_on() if state else turn_off()
+	visible = state
