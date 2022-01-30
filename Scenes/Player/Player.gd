@@ -8,6 +8,8 @@ signal revived
 
 var velocity = Vector3.ZERO
 var move_speed = 2
+var death_drama = 0.0005
+
 var flipped = false
 var dead = false
 var disabled = false
@@ -21,13 +23,17 @@ func _ready():
 
 
 func _physics_process(delta):
-	if dead or disabled: return
+	if disabled: return
 	
-	# Input
-	velocity.x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
-	velocity.z = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
-	
-	velocity = move_and_slide(velocity.normalized() * move_speed, Vector3.UP)
+	if not dead:
+		# Input
+		velocity.x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
+		velocity.z = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
+		
+		velocity = move_and_slide(velocity.normalized() * move_speed, Vector3.UP)
+	else:
+		velocity *= pow(death_drama, delta)
+		velocity = move_and_slide(velocity, Vector3.UP)
 
 
 func _input(event):
