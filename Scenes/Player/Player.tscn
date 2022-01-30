@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Sprites/Ded.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/WalkUp.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/ShadedAnimatedSprite3D.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/idle.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Smoke.png" type="Texture" id=9]
 
 [sub_resource type="SpatialMaterial" id=7]
 flags_unshaded = true
@@ -163,6 +164,28 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -180, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="ParticlesMaterial" id=29]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 0.04
+direction = Vector3( 0, 1, 0 )
+spread = 120.0
+gravity = Vector3( 0, 0.4, 0 )
+initial_velocity = 0.2
+initial_velocity_random = 0.25
+scale_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=30]
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 9 )
+
+[sub_resource type="QuadMesh" id=31]
+material = SubResource( 30 )
+size = Vector2( 0.01, 0.01 )
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 2 )
 
@@ -185,6 +208,17 @@ anims/flip_right = SubResource( 3 )
 
 [node name="DeathrayListener" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0 )
+
+[node name="BurnParticles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418, 0.0689743, 0 )
+cast_shadow = 0
+emitting = false
+amount = 128
+preprocess = 0.24
+randomness = 1.0
+visibility_aabb = AABB( -0.005, -0.005, -0.005, 0.01, 0.01, 0.01 )
+process_material = SubResource( 29 )
+draw_pass_1 = SubResource( 31 )
 
 [connection signal="animation_finished" from="Pivot/Sprite" to="." method="_on_Sprite_animation_finished"]
 [connection signal="deathray_entered" from="DeathrayListener" to="." method="_on_DeathrayListener_deathray_entered"]
