@@ -78,7 +78,7 @@ spot_range = 12.4015
 spot_angle = 41.7194
 
 [node name="Painting1" parent="Lights" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0276, 0.0628681, 1.93698 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9091, 0.326469, 1.44086 )
 
 [node name="Painting2" parent="Lights/Painting1" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52478, 0.63245, -1.92879 )
