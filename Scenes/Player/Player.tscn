@@ -212,7 +212,7 @@ anims/flip_right = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0 )
 
 [node name="BurnParticles" type="Particles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418, 0.0689743, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0272771, 0.0537378, 0 )
 cast_shadow = 0
 emitting = false
 amount = 128

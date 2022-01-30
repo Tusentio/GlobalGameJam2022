@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Deathray/Deathray.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/PlayerCamera/PlayerCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/CameraPivot.gd" type="Script" id=10]
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 9 )
@@ -40,8 +41,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.672, 2.544 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000439592, 0.32 )
 
-[node name="PlayerCamera" parent="Player" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.364993, 0.96 )
+[node name="CameraPivot" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0, 0 )
+script = ExtResource( 10 )
+
+[node name="PlayerCamera" parent="Player/CameraPivot" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0.04, 0.35, 1 )
 smooth_factor = 0.001
 
 [node name="LevelEntrance" parent="." instance=ExtResource( 3 )]
@@ -95,3 +100,5 @@ __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, -6, 0 )
 }
+
+[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
