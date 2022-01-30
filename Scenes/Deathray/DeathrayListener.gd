@@ -11,14 +11,12 @@ var deathrays = []
 
 func inside(deathray):
 	if not deathrays.has(deathray):
-		print("inside")
 		deathrays.append(deathray)
 		emit_signal("deathray_entered", deathray)
 
 
 func outside(deathray):
 	if deathrays.has(deathray):
-		print("outside")
 		deathrays.erase(deathray)
 		emit_signal("deathray_exited", deathray)
 
