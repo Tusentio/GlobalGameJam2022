@@ -55,6 +55,12 @@ transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 13.
 spot_angle = 20.0
 switch = NodePath("../../Lever")
 
+[node name="Deathray4" parent="Lights" instance=ExtResource( 7 )]
+transform = Transform( 0.999864, -0.0059975, -0.0153898, 0.0153527, -0.00618323, 0.999863, 0.00609184, 0.999963, 0.00609031, 4.63948, 1.81024, 1.98164 )
+spot_range = 12.4015
+spot_angle = 41.7194
+switch = NodePath("../../Lever")
+
 [node name="Pillars" type="Spatial" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource( 6 )]
@@ -179,5 +185,3 @@ on = true
 [node name="Lever2" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8245, 0.334635, 1.45035 )
 on = true
-
-[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
