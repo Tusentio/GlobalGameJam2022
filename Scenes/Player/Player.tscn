@@ -176,6 +176,8 @@ initial_velocity_random = 0.25
 scale_random = 1.0
 
 [sub_resource type="SpatialMaterial" id=30]
+flags_unshaded = true
+params_blend_mode = 3
 params_billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
@@ -213,7 +215,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418, 0.0689743, 0 )
 cast_shadow = 0
 emitting = false
-amount = 128
+amount = 256
 preprocess = 0.24
 randomness = 1.0
 visibility_aabb = AABB( -0.005, -0.005, -0.005, 0.01, 0.01, 0.01 )
