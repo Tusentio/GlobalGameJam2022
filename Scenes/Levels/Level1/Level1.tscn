@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Tiles/Floors.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Scenes/Lever/Lever.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Paintings/Painting1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Paintings/Painting2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Decor/Banner1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Decor/Banner2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Decor/Banner3.tscn" type="PackedScene" id=17]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.4, 0.56, 0 )
@@ -136,6 +139,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.672, 3.544 )
 [node name="Pillar17" parent="Pillars" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.672, 3.544 )
 
+[node name="Banner2" parent="Pillars" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53187, -23.7592, -35.9648 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.673923, 0.000439592, 0.537885 )
 
@@ -233,3 +239,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.56, 0.56, 3.04 )
 [node name="CollisionShape" type="CollisionShape" parent="InvisibleWalls/Wall4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799999, 0, -0.48 )
 shape = SubResource( 4 )
+
+[node name="Banner1" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4671, 0.645837, 0.00465509 )
+
+[node name="Banner2" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.62676, 0.645837, 0.00465509 )
+
+[node name="Banner3" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.50681, 0.645837, 0.00465509 )
+
+[node name="Banner4" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.494, 0.646, 0.003 )
+
+[node name="Banner5" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48417, 0.646, 0.003 )
+
+[node name="Banner6" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49304, 0.646, 0.014747 )
+
+[node name="Banner8" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39936, 0.646, 0.014747 )
+
+[node name="Banner7" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48678, 0.646, 0.013815 )
