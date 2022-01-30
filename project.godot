@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://Autoload/SceneChanger.tscn"
 PauseMenu="*res://Scenes/PauseMenu/PauseMenu.tscn"
+DeathScream="*res://Autoload/DeathScream.tscn"
 
 [global]
 

@@ -68,15 +68,15 @@ flags = 18
 atlas = ExtResource( 5 )
 region = Rect2( 34, 0, 34, 24 )
 
+[sub_resource type="AtlasTexture" id=32]
+flags = 18
+atlas = ExtResource( 8 )
+region = Rect2( 34, 0, 34, 24 )
+
 [sub_resource type="AtlasTexture" id=23]
 flags = 18
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 42, 25 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 18
-atlas = ExtResource( 1 )
-region = Rect2( 42, 0, 42, 25 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 18
@@ -120,10 +120,10 @@ animations = [ {
 "name": "walk_hither",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
-"loop": true,
+"frames": [ SubResource( 32 ), SubResource( 23 ), SubResource( 23 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ) ],
+"loop": false,
 "name": "ded",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape" id=5]
@@ -215,8 +215,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418, 0.0689743, 0 )
 cast_shadow = 0
 emitting = false
-amount = 256
-preprocess = 0.24
+amount = 128
+speed_scale = 0.5
 randomness = 1.0
 visibility_aabb = AABB( -0.005, -0.005, -0.005, 0.01, 0.01, 0.01 )
 process_material = SubResource( 29 )
