@@ -42,9 +42,9 @@ __meta__ = {
 
 [node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 428.0
-margin_top = 209.0
+margin_top = 241.0
 margin_right = 595.0
-margin_bottom = 391.0
+margin_bottom = 359.0
 custom_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="CenterContainer/Buttons"]
@@ -58,6 +58,7 @@ __meta__ = {
 }
 
 [node name="RestartButton" type="Button" parent="CenterContainer/Buttons"]
+visible = false
 margin_top = 64.0
 margin_right = 167.0
 margin_bottom = 118.0
@@ -65,9 +66,9 @@ theme = ExtResource( 2 )
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/Buttons"]
-margin_top = 128.0
+margin_top = 64.0
 margin_right = 167.0
-margin_bottom = 182.0
+margin_bottom = 118.0
 focus_neighbour_bottom = NodePath("../PlayButton")
 theme = ExtResource( 2 )
 text = "Quit game"
