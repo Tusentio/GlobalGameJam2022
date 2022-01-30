@@ -97,3 +97,5 @@ __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, 11, 0 )
 }
+
+[connection signal="dying" from="Player" to="Player/CameraPivot" method="_on_Player_dying"]
