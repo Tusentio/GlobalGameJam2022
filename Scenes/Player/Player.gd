@@ -7,7 +7,7 @@ signal revived
 
 
 var velocity = Vector3.ZERO
-var move_speed = 2
+var move_speed = 1.25
 var death_drama = 0.0005
 
 var flipped = false
