@@ -12,5 +12,5 @@ func _process(delta):
 	$Camera.global_transform.origin = old_pos.linear_interpolate(global_transform.origin, smoothage);
 	old_pos = $Camera.global_transform.origin;
 	
-	$Camera.global_transform.basis = Basis(old_rot.slerp(Quat(global_transform.basis), smoothage));
+	$Camera.global_transform.basis = Basis(old_rot.slerp(global_transform.basis.get_rotation_quat(), smoothage));
 	old_rot = Quat($Camera.global_transform.basis);
