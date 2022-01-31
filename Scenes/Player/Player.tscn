@@ -39,26 +39,6 @@ flags = 18
 atlas = ExtResource( 5 )
 region = Rect2( 34, 0, 34, 24 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 18
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 34, 25 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 18
-atlas = ExtResource( 3 )
-region = Rect2( 34, 0, 34, 25 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 18
-atlas = ExtResource( 3 )
-region = Rect2( 68, 0, 34, 25 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 18
-atlas = ExtResource( 3 )
-region = Rect2( 102, 0, 34, 25 )
-
 [sub_resource type="AtlasTexture" id=19]
 flags = 18
 atlas = ExtResource( 6 )
@@ -99,32 +79,52 @@ flags = 18
 atlas = ExtResource( 1 )
 region = Rect2( 210, 0, 42, 25 )
 
+[sub_resource type="AtlasTexture" id=8]
+flags = 18
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 34, 25 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 18
+atlas = ExtResource( 3 )
+region = Rect2( 34, 0, 34, 25 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 18
+atlas = ExtResource( 3 )
+region = Rect2( 68, 0, 34, 25 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 18
+atlas = ExtResource( 3 )
+region = Rect2( 102, 0, 34, 25 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "idle",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "walk_hither",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "walk_sideways",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "walk_yonder",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 32 ), SubResource( 23 ), SubResource( 23 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ) ],
 "loop": false,
 "name": "ded",
 "speed": 3.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "walk_sideways",
+"speed": 6.0
 } ]
 
 [sub_resource type="ParticlesMaterial" id=29]
