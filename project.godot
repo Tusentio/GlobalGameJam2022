@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "DeathrayListener",
 "language": "GDScript",
 "path": "res://Scenes/Deathray/DeathrayListener.gd"
+}, {
+"base": "AnimatedSprite3D",
+"class": "ShadedAnimatedSprite3D",
+"language": "GDScript",
+"path": "res://Scripts/ShadedAnimatedSprite3D.gd"
 } ]
 _global_script_class_icons={
-"DeathrayListener": ""
+"DeathrayListener": "",
+"ShadedAnimatedSprite3D": ""
 }
 
 [application]

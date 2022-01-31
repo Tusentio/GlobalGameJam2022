@@ -1,7 +1,18 @@
+tool
 extends AnimatedSprite3D
+class_name ShadedAnimatedSprite3D
 
 
-func _process(delta):
+func _ready():
+	connect("frame_changed", self, "_update")
+
+
+func play(anim: String = ""):
+	.play(anim)
+	_update()
+
+
+func _update():
 	var frame_texture = frames.get_frame(animation, frame)
 	if frame_texture == null: return
 	
